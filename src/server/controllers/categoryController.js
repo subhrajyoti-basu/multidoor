@@ -22,7 +22,7 @@ const addCategory = async (req, res) => {
         }
 
         // create new category
-        const category = await new categoryModel({name: name, slug: })
+        const category = await new categoryModel({name: name, slug: name })
 
 
 
