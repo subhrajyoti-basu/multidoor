@@ -5,8 +5,13 @@ const userModel = require('../models/userModel');
 const requireSignIn = async (req, res, next) => {
     try {
         const decode = await JWT.verify(req.headers.authorization, process.env.JWT_SECRET)
-        req.user = decode;
-        next()
+        console.log(decode)
+        if(decode){
+            req.user = decode;
+            next()
+        }else{
+            throw 'not found'
+        }
     } catch (error) {
         res.status(401).send({
             success: false,
