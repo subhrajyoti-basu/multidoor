@@ -1,7 +1,7 @@
 import { Row, Text } from '@nextui-org/react'
 import Link from 'next/link'
 import React from 'react'
-import { FiHome, FiList } from 'react-icons/fi'
+import { FiBookOpen, FiHome, FiList } from 'react-icons/fi'
 
 const SellerNavigation = () => {
     return (
@@ -13,6 +13,12 @@ const SellerNavigation = () => {
                         <Row align='center' css={{marginBottom: '10px', fontWeight: 'bold', color: 'black'}}>
                             <FiHome size={20} style={{marginRight: '5px'}} />
                             Dashboard
+                        </Row>
+                    </Link>
+                    <Link href='/seller/category'>
+                        <Row align='center' css={{marginBottom: '10px', fontWeight: 'bold', color: 'black'}}>
+                            <FiBookOpen size={20} style={{marginRight: '5px'}} />
+                            Categories
                         </Row>
                     </Link>
                     <Link href='/seller/orders'>
