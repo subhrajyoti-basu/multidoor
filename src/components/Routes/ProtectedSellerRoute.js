@@ -14,7 +14,7 @@ const ProtectedSellerRoute = ({ children }) => {
 
   const checkSeller = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/v1/auth/user-seller')
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE}/api/v1/auth/user-seller`)
       if (response?.data.ok == true) {
         setSeller({
           seller: true,
