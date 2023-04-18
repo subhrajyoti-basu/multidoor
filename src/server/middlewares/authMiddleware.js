@@ -38,9 +38,9 @@ const isAdmin = async (req, res, next) => {
 
 // Seller access
 const isSeller = async (req, res, next) => {
-    console.log(req.user._id)
     try {
         const user = await userModel.findById(req.user._id)
+        console.log(user)
         if (user.role == 2) {
             next()
         } else {
