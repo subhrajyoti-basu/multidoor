@@ -5,7 +5,6 @@ const userModel = require('../models/userModel');
 const requireSignIn = async (req, res, next) => {
     try {
         const decode = await JWT.verify(req.headers.authorization, process.env.JWT_SECRET)
-        console.log(decode)
         if(decode){
             req.user = decode;
             next()
@@ -39,6 +38,7 @@ const isAdmin = async (req, res, next) => {
 
 // Seller access
 const isSeller = async (req, res, next) => {
+    console.log(req.user._id)
     try {
         const user = await userModel.findById(req.user._id)
         if (user.role == 2) {
