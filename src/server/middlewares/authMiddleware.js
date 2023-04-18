@@ -41,12 +41,14 @@ const isAdmin = async (req, res, next) => {
 const isSeller = async (req, res, next) => {
     try {
         const user = await userModel.findById(req.user._id)
-        if (user.role !== 2) {
+        if (user.role == 2) {
+            next()
+        } else {
             return res.status(401).send({
                 success: false,
                 message: 'User is not a seller'
             })
-        } else next()
+        }
 
     } catch (error) {
         console.log(error)
