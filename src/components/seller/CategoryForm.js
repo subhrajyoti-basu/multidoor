@@ -12,9 +12,9 @@ const categoryForm = ({getCategory, value, visible}) => {
         e.preventDefault();
         let URL
         if(value){
-            URL = `${NEXT_PUBLIC_API_BASE}/api/v1/category/update-category/${value._id}`
+            URL = `${process.env.NEXT_PUBLIC_API_BASE}/api/v1/category/update-category/${value._id}`
         }else{
-            URL = `${NEXT_PUBLIC_API_BASE}/api/v1/category/add-category`
+            URL = `${process.env.NEXT_PUBLIC_API_BASE}/api/v1/category/add-category`
         }
 
         try {

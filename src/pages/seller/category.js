@@ -18,7 +18,7 @@ const category = () => {
     // delete category
     const deleteCategory = async (slug) => {
         try {
-            const { data: res } = await axios.delete(`http://localhost:8000/api/v1/category/delete-category/${slug}`)
+            const { data: res } = await axios.delete(`${process.env.NEXT_PUBLIC_API_BASE}/api/v1/category/delete-category/${slug}`)
             if (res.success) {
                 getCategory();
             }
@@ -30,7 +30,7 @@ const category = () => {
     // call category data
     const getCategory = async () => {
         try {
-            const { data: res } = await axios.get(`${NEXT_PUBLIC_API_BASE}/api/v1/category/get-categories`)
+            const { data: res } = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE}/api/v1/category/get-categories`)
             // console.log(res?.categories)
             setCategoryData(res?.categories)
 
