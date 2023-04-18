@@ -30,7 +30,7 @@ const category = () => {
     // call category data
     const getCategory = async () => {
         try {
-            const { data: res } = await axios.get('http://localhost:8000/api/v1/category/get-categories')
+            const { data: res } = await axios.get(`${NEXT_PUBLIC_API_BASE}/api/v1/category/get-categories`)
             // console.log(res?.categories)
             setCategoryData(res?.categories)
 

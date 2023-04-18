@@ -15,7 +15,7 @@ function index() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:8000/api/v1/auth/login', {
+      const res = await axios.post(`${NEXT_PUBLIC_API_BASE}/api/v1/auth/login`, {
         ...inputstate
       })
       if (res && res.data.success) {
